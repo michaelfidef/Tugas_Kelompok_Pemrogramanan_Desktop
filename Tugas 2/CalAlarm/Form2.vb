@@ -16,6 +16,11 @@ Public Class Form2
         Form1.MySelectedDate = SelectedDate
     End Sub
 
+    Private Sub Form2_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        txtBoxHour.Text = DateAndTime.Now.ToString("HH")
+        txtBoxMinutes.Text = DateAndTime.Now.ToString("mm")
+        txtBoxSecond.Text = DateAndTime.Now.ToString("ss")
+    End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblDateTime.Text = DateAndTime.Now.ToString("HH:mm:ss")
@@ -91,7 +96,9 @@ Public Class Form2
             PanelsData.Add(panelData)
 
             CreatePanel()
-            panelCount += 1
+            Form1.DisplayLoadedData()
+        Else
+            MessageBox.Show("Mohon maaf data alarm hanya berisi 8 saja")
         End If
         Dim combinedTime As String = txtBoxHour.Text & ":" & txtBoxMinutes.Text & ":" & txtBoxSecond.Text
         Me.Close()
@@ -112,20 +119,25 @@ Public Class Form2
         Dim panelHeight As Integer = 100
         Dim panelSpacing As Integer = 10
         Dim verticalSpacing As Integer = 10
+
+        Dim panelsInCurrentRow As Integer = panelCount Mod 4
+        Dim locationX As Integer = panelsInCurrentRow * (panelWidth + panelSpacing)
+        Dim locationY As Integer = (panelCount \ 4) * (panelHeight + panelSpacing) + 60
+
         Dim pnl As New Panel()
         Form1.Controls.Add(pnl)
         With pnl
             .Width = panelWidth
             .Height = panelHeight
-            .Location = New Point(panelCount * (panelWidth + panelSpacing), 60)
+            .Location = New Point(locationX, locationY)
             .Name = "panel" & panelCount.ToString
             .Visible = True
             .BackColor = Color.Pink
         End With
+
         AddLabelsToPanel(pnl)
+        panelCount += 1
     End Sub
-
-
 
     Public Sub AddLabelsToPanel(ByVal pnl As Panel)
         Dim lblWaktu As New Label
@@ -147,18 +159,6 @@ Public Class Form2
             .AutoSize = True
         End With
         pnl.Controls.Add(lblTanggal)
-    End Sub
-
-    Private Sub txtBoxHour_TextChanged(sender As Object, e As EventArgs) Handles txtBoxHour.TextChanged
-        txtBoxHour.Text = DateAndTime.Now.ToString("HH")
-    End Sub
-
-    Private Sub txtBoxMinutes_TextChanged(sender As Object, e As EventArgs) Handles txtBoxMinutes.TextChanged
-        txtBoxMinutes.Text = DateAndTime.Now.ToString("mm")
-    End Sub
-
-    Private Sub txtBoxSecond_TextChanged(sender As Object, e As EventArgs) Handles txtBoxSecond.TextChanged
-        txtBoxSecond.Text = DateAndTime.Now.ToString("ss")
     End Sub
 End Class
 

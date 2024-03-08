@@ -62,35 +62,26 @@ Public Class Form1
     End Sub
 
     Public Sub LoadData()
-        ' Membersihkan data panel sebelum memuat data baru
         MyPanelsData.Clear()
 
-        ' Membaca data dari file teks
         Dim lines As String() = File.ReadAllLines(OpenFileDialog1.FileName)
 
-        ' Memproses setiap baris data
         For Each line As String In lines
-            ' Membagi baris menjadi bagian-bagian berdasarkan tanda koma (,)
             Dim parts As String() = line.Split(","c)
 
-            ' Memeriksa apakah baris memiliki format yang diharapkan
             If parts.Length = 2 Then
-                ' Memisahkan bagian waktu dan tanggal
                 Dim timePart As String() = parts(0).Split(" "c)
                 Dim datePart As String() = parts(1).Trim().Split("/"c)
 
-                ' Membaca data waktu
                 Dim timeData As String() = timePart(1).Trim().Split(":"c)
                 Dim hour As String = timeData(0).Trim()
                 Dim minutes As String = timeData(1).Trim()
                 Dim second As String = timeData(2).Trim()
 
-                ' Membaca data tanggal
                 Dim day As String = datePart(0).Trim()
                 Dim month As String = datePart(1).Trim()
                 Dim year As String = datePart(2).Trim()
 
-                ' Menambahkan data panel ke dalam list MyPanelsData
                 MyPanelsData.Add(New PanelData() With {
                     .Hour = hour,
                     .Minutes = minutes,
@@ -98,47 +89,83 @@ Public Class Form1
                     .Dates = $"{day}/{month}/{year}"
                 })
             Else
-                ' Menampilkan pesan kesalahan jika format tidak sesuai
                 MessageBox.Show("Format data tidak valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
         Next
-
-        MessageBox.Show("Data panel berhasil dimuat.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ' MessageBox.Show("Data panel berhasil dimuat.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
-    Private WithEvents FlowLayoutPanel1 As New FlowLayoutPanel()
+    Public Sub RemoveAllPanels()
+        Dim panelsToRemove As New List(Of Panel)
 
-    Private Sub DisplayLoadedData()
-        ' Membersihkan FlowLayoutPanel sebelum menampilkan data
-        FlowLayoutPanel1.Controls.Clear()
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is Panel Then
+                panelsToRemove.Add(TryCast(ctrl, Panel))
+            End If
+        Next
 
-        ' Memeriksa apakah ada data panel yang dimuat
+        For Each panelToRemove As Panel In panelsToRemove
+            Me.Controls.Remove(panelToRemove)
+            panelToRemove.Dispose()
+        Next
+    End Sub
+
+    Public Sub DisplayLoadedData()
+        RemoveAllPanels()
+
         If MyPanelsData IsNot Nothing AndAlso MyPanelsData.Count > 0 Then
-            ' Memproses setiap data panel yang dimuat
-            For Each panelData As PanelData In MyPanelsData
-                ' Membuat panel untuk menampilkan data panel
+            Dim panelWidth As Integer = 200
+            Dim panelHeight As Integer = 100
+            Dim panelSpacing As Integer = 10
+            Dim verticalSpacing As Integer = 10
+
+            Dim totalPanels As Integer = MyPanelsData.Count
+
+            Dim rowCount As Integer = 0
+            Dim columnCount As Integer = 0
+
+            For i As Integer = 0 To totalPanels - 1
+
                 Dim panel As New Panel()
-                panel.BackColor = Color.Pink
-                panel.BorderStyle = BorderStyle.FixedSingle
-                panel.AutoSize = True
+                With panel
+                    .BackColor = Color.Pink
+                    .BorderStyle = BorderStyle.FixedSingle
+                    .Size = New Size(panelWidth, panelHeight)
+                    .Location = New Point(columnCount * (panelWidth + panelSpacing), rowCount * (panelHeight + verticalSpacing) + 60)
+                End With
 
-                ' Membuat label untuk menampilkan data panel
-                Dim lblPanelData As New Label()
-                lblPanelData.AutoSize = True
-                lblPanelData.Text = $"Panel: {panelData.Hour}:{panelData.Minutes}:{panelData.Second}, {panelData.Dates}"
+                Dim lblWaktu As New Label
+                With lblWaktu
+                    .Name = "waktu"
+                    .Text = $"{MyPanelsData(i).Hour}:{MyPanelsData(i).Minutes}:{MyPanelsData(i).Second}"
+                    .Location = New Point(10, 20)
+                    .Font = New Font(lblWaktu.Font, FontStyle.Bold)
+                    .Font = New Font(lblWaktu.Font.FontFamily, 20)
+                    .AutoSize = True
+                End With
 
-                ' Menambahkan label ke dalam panel
-                panel.Controls.Add(lblPanelData)
+                Dim lblTanggal As New Label
+                With lblTanggal
+                    .Name = "tanggal"
+                    .Text = $"{MyPanelsData(i).Dates}"
+                    .Location = New Point(10, 60)
+                    .AutoSize = True
+                End With
 
-                ' Menambahkan panel ke dalam FlowLayoutPanel
-                'FlowLayoutPanel1.Controls.Add(panel)            
+                panel.Controls.Add(lblWaktu)
+                panel.Controls.Add(lblTanggal)
+
+                Me.Controls.Add(panel)
+
+                columnCount += 1
+                If columnCount = 4 Then
+                    columnCount = 0
+                    rowCount += 1
+                End If
             Next
         Else
-            ' Menampilkan pesan jika tidak ada data panel yang dimuat
             MessageBox.Show("Tidak ada data panel yang dimuat.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
-
-
 End Class
