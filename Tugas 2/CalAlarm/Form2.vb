@@ -1,9 +1,14 @@
-﻿
+﻿Module Globals
+    Public panelCount As Integer = 0
+End Module
 
 Public Class Form2
 
-    Public Property MyValue As String
     Public Property SelectedDate As DateTime
+    Private Shared panelCount As Integer = 0
+    Public Property MyValue As String
+    Public Property MySelectedDate As DateTime
+    Public Property PanelsData As List(Of PanelData)
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
@@ -11,8 +16,9 @@ Public Class Form2
         Form1.MySelectedDate = SelectedDate
     End Sub
 
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        lblDateTime.Text = Now.ToString("h:mm:ss tt")
+        lblDateTime.Text = DateAndTime.Now.ToString("HH:mm:ss")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -76,18 +82,25 @@ Public Class Form2
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        CreatePanel()
+        If panelCount < 8 Then
+            Dim panelData As New PanelData()
+            panelData.Hour = txtBoxHour.Text
+            panelData.Minutes = txtBoxMinutes.Text
+            panelData.Second = txtBoxSecond.Text
+            panelData.Dates = SelectedDate.ToShortDateString()
+            PanelsData.Add(panelData)
+
+            CreatePanel()
+            panelCount += 1
+        End If
         Dim combinedTime As String = txtBoxHour.Text & ":" & txtBoxMinutes.Text & ":" & txtBoxSecond.Text
         Me.Close()
     End Sub
 
-
     Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar1.DateChanged
         SelectedDate = MonthCalendar1.SelectionStart
-        If SelectedDate = Nothing Then
-            SelectedDate = Date.Today
-        End If
         Form1.MySelectedDate = SelectedDate
+        txtDeskripsi.Text = SelectedDate
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -98,41 +111,60 @@ Public Class Form2
         Dim panelWidth As Integer = 200
         Dim panelHeight As Integer = 100
         Dim panelSpacing As Integer = 10
-        Dim panelCount As Integer = 0
-        If panelCount < 5 Then
-            Dim pnl As New Panel()
-            With pnl
-                .Width = panelWidth
-                .Height = panelHeight
-                .Location = New Point(panelCount * (panelWidth + panelSpacing), 60)
-                .Name = "panel" & panelCount.ToString
-                .Visible = True
-                .BackColor = Color.Red
-            End With
-            AddLabelsToPanel(pnl)
-            Form1.Controls.Add(pnl)
-            panelCount += 1
-        End If
+        Dim verticalSpacing As Integer = 10
+        Dim pnl As New Panel()
+        Form1.Controls.Add(pnl)
+        With pnl
+            .Width = panelWidth
+            .Height = panelHeight
+            .Location = New Point(panelCount * (panelWidth + panelSpacing), 60)
+            .Name = "panel" & panelCount.ToString
+            .Visible = True
+            .BackColor = Color.Pink
+        End With
+        AddLabelsToPanel(pnl)
     End Sub
 
-    Private Sub AddLabelsToPanel(ByVal pnl As Panel)
-        ' Create and configure labels as needed
+
+
+    Public Sub AddLabelsToPanel(ByVal pnl As Panel)
         Dim lblWaktu As New Label
         With lblWaktu
             .Name = "waktu" & pnl.Name.Substring(5)
-            .Text = "22:22:22"
+            .Text = $"{txtBoxHour.Text}:{txtBoxMinutes.Text}:{txtBoxSecond.Text}"
             .Location = New Point(10, 20)
+            .Font = New Font(lblWaktu.Font, FontStyle.Bold)
+            .Font = New Font(lblWaktu.Font.FontFamily, 20)
+            .AutoSize = True
         End With
-        pnl.Controls.Add(lblWaktu)
 
+        pnl.Controls.Add(lblWaktu)
         Dim lblTanggal As New Label
         With lblTanggal
-            .Text = "12/11/2024"
-            .Location = New Point(20, 40)
+            .Name = "tanggal" & pnl.Name.Substring(5)
+            .Text = SelectedDate.ToShortDateString()
+            .Location = New Point(10, 60)
+            .AutoSize = True
         End With
         pnl.Controls.Add(lblTanggal)
     End Sub
 
+    Private Sub txtBoxHour_TextChanged(sender As Object, e As EventArgs) Handles txtBoxHour.TextChanged
+        txtBoxHour.Text = DateAndTime.Now.ToString("HH")
+    End Sub
 
+    Private Sub txtBoxMinutes_TextChanged(sender As Object, e As EventArgs) Handles txtBoxMinutes.TextChanged
+        txtBoxMinutes.Text = DateAndTime.Now.ToString("mm")
+    End Sub
 
+    Private Sub txtBoxSecond_TextChanged(sender As Object, e As EventArgs) Handles txtBoxSecond.TextChanged
+        txtBoxSecond.Text = DateAndTime.Now.ToString("ss")
+    End Sub
+End Class
+
+Public Class PanelData
+    Public Property Hour As String
+    Public Property Minutes As String
+    Public Property Second As String
+    Public Property Dates As String
 End Class

@@ -42,7 +42,8 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlarmToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1212, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(909, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -50,31 +51,31 @@ Partial Class Form1
         '
         Me.AlarmToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewAlarmToolStripMenuItem, Me.BukaArsipToolStripMenuItem, Me.LoadToolStripMenuItem, Me.KeluarToolStripMenuItem})
         Me.AlarmToolStripMenuItem.Name = "AlarmToolStripMenuItem"
-        Me.AlarmToolStripMenuItem.Size = New System.Drawing.Size(63, 24)
+        Me.AlarmToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
         Me.AlarmToolStripMenuItem.Text = "Alarm"
         '
         'NewAlarmToolStripMenuItem
         '
         Me.NewAlarmToolStripMenuItem.Name = "NewAlarmToolStripMenuItem"
-        Me.NewAlarmToolStripMenuItem.Size = New System.Drawing.Size(188, 26)
+        Me.NewAlarmToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NewAlarmToolStripMenuItem.Text = "Tambah Alarm"
         '
         'BukaArsipToolStripMenuItem
         '
         Me.BukaArsipToolStripMenuItem.Name = "BukaArsipToolStripMenuItem"
-        Me.BukaArsipToolStripMenuItem.Size = New System.Drawing.Size(188, 26)
+        Me.BukaArsipToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BukaArsipToolStripMenuItem.Text = "Simpan"
         '
         'LoadToolStripMenuItem
         '
         Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
-        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(188, 26)
+        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LoadToolStripMenuItem.Text = "Load"
         '
         'KeluarToolStripMenuItem
         '
         Me.KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(188, 26)
+        Me.KeluarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.KeluarToolStripMenuItem.Text = "Keluar"
         '
         'OpenFileDialog1
@@ -89,29 +90,32 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 30)
+        Me.Label1.Location = New System.Drawing.Point(9, 24)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(113, 16)
+        Me.Label1.Size = New System.Drawing.Size(94, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Waktu Sekarang :"
         '
         'lblDateTime
         '
         Me.lblDateTime.AutoSize = True
-        Me.lblDateTime.Location = New System.Drawing.Point(132, 32)
+        Me.lblDateTime.Location = New System.Drawing.Point(99, 26)
+        Me.lblDateTime.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDateTime.Name = "lblDateTime"
-        Me.lblDateTime.Size = New System.Drawing.Size(0, 16)
+        Me.lblDateTime.Size = New System.Drawing.Size(0, 13)
         Me.lblDateTime.TabIndex = 2
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1212, 383)
+        Me.ClientSize = New System.Drawing.Size(909, 311)
         Me.Controls.Add(Me.lblDateTime)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Form1"
         Me.Text = "Alarmku"
         Me.MenuStrip1.ResumeLayout(False)
