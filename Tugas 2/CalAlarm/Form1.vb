@@ -95,6 +95,7 @@ Public Class Form1
                 Exit Sub
             End If
         Next
+        ' MessageBox.Show("Data panel berhasil dimuat.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Public Sub RemoveAllPanels()
@@ -196,12 +197,6 @@ Public Class Form1
 
         ' Hapus panel-panel yang telah ditentukan dari daftar MyPanelsData dan dari form
         For Each panelToRemove As Panel In panelsToRemove
-<<<<<<< HEAD
-            Dim panelDataToRemove As PanelData = MyPanelsData.FirstOrDefault(Function(p) $"{p.Hour}:{p.Minutes}:{p.Second}" = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "waktu").Text)
-            If panelDataToRemove IsNot Nothing Then
-                MyPanelsData.Remove(panelDataToRemove)
-
-=======
             Dim waktuPanelText As String = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "waktu")?.Text
             Dim tanggalPanelText As String = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "tanggal")?.Text
 
@@ -211,20 +206,17 @@ Public Class Form1
                 MyPanelsData.Remove(panelDataToRemove)
 
                 ' Kirim data ke Form3
->>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
                 Dim form3 As New Form3(panelDataToRemove)
                 form3.Show()
             End If
 
+            ' Hapus panel dari form
             Me.Controls.Remove(panelToRemove)
             panelToRemove.Dispose()
         Next
     End Sub
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
 End Class

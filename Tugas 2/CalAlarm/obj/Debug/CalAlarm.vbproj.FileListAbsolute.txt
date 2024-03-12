@@ -40,17 +40,3 @@ C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester
 C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 2\CalAlarm\obj\Debug\CalAlarm.exe
 C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 2\CalAlarm\obj\Debug\CalAlarm.xml
 C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 2\CalAlarm\obj\Debug\CalAlarm.pdb
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\bin\Debug\CalAlarm.exe.config
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\bin\Debug\CalAlarm.exe
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\bin\Debug\CalAlarm.pdb
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\bin\Debug\CalAlarm.xml
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.vbproj.AssemblyReference.cache
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.Form1.resources
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.Form2.resources
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.Form3.resources
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.Resources.resources
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.vbproj.GenerateResource.cache
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.vbproj.CoreCompileInputs.cache
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.exe
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.xml
-C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas Kelompok Pemrogramanan Desktop ku\Tugas 2\CalAlarm\obj\Debug\CalAlarm.pdb
