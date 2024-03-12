@@ -10,6 +10,7 @@ Public Class Form3
     End Sub
 
     Private Sub btnMatikan_Click(sender As Object, e As EventArgs) Handles btnMatikan.Click
+        soundPlayer.Stop()
         Me.Close()
     End Sub
 
@@ -27,7 +28,7 @@ Public Class Form3
         Me.Location = New Point(screenWidth - formWidth - offsetX, screenHeight - formHeight - offsetY)
 
         ' Inisialisasi objek SoundPlayer dengan lokasi file audio
-        soundPlayer = New SoundPlayer("C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 2\Tugas 2\alarm.wav") ' Ganti dengan path file audio yang sesuai
+        soundPlayer = New SoundPlayer("../alarm.wav") ' Ganti dengan path file audio yang sesuai
 
         ' Mainkan audio
         soundPlayer.PlayLooping()
