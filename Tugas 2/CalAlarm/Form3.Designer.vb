@@ -23,9 +23,13 @@ Partial Class Form3
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Alarmku = New System.Windows.Forms.Label()
-        Me.lblSetWaktuAlarm = New System.Windows.Forms.Label()
         Me.btnMatikan = New System.Windows.Forms.Button()
+<<<<<<< HEAD
+        Me.lblTanggal = New System.Windows.Forms.Label()
+        Me.lblWaktu = New System.Windows.Forms.Label()
+=======
         Me.lblWaktuSekarang = New System.Windows.Forms.Label()
+>>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
         Me.SuspendLayout()
         '
         'Alarmku
@@ -39,6 +43,8 @@ Partial Class Form3
         Me.Alarmku.TabIndex = 0
         Me.Alarmku.Text = "Alarmku"
         '
+<<<<<<< HEAD
+=======
         'lblSetWaktuAlarm
         '
         Me.lblSetWaktuAlarm.AutoSize = True
@@ -50,6 +56,7 @@ Partial Class Form3
         Me.lblSetWaktuAlarm.TabIndex = 1
         Me.lblSetWaktuAlarm.Text = "tgl"
         '
+>>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
         'btnMatikan
         '
         Me.btnMatikan.Location = New System.Drawing.Point(200, 52)
@@ -60,6 +67,25 @@ Partial Class Form3
         Me.btnMatikan.Text = "Matikan!"
         Me.btnMatikan.UseVisualStyleBackColor = True
         '
+<<<<<<< HEAD
+        'lblTanggal
+        '
+        Me.lblTanggal.AutoSize = True
+        Me.lblTanggal.Location = New System.Drawing.Point(49, 55)
+        Me.lblTanggal.Name = "lblTanggal"
+        Me.lblTanggal.Size = New System.Drawing.Size(48, 16)
+        Me.lblTanggal.TabIndex = 3
+        Me.lblTanggal.Text = "Label1"
+        '
+        'lblWaktu
+        '
+        Me.lblWaktu.AutoSize = True
+        Me.lblWaktu.Location = New System.Drawing.Point(49, 94)
+        Me.lblWaktu.Name = "lblWaktu"
+        Me.lblWaktu.Size = New System.Drawing.Size(48, 16)
+        Me.lblWaktu.TabIndex = 4
+        Me.lblWaktu.Text = "Label2"
+=======
         'lblWaktuSekarang
         '
         Me.lblWaktuSekarang.AutoSize = True
@@ -68,15 +94,21 @@ Partial Class Form3
         Me.lblWaktuSekarang.Size = New System.Drawing.Size(39, 13)
         Me.lblWaktuSekarang.TabIndex = 3
         Me.lblWaktuSekarang.Text = "Label1"
+>>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+<<<<<<< HEAD
+        Me.ClientSize = New System.Drawing.Size(423, 134)
+        Me.Controls.Add(Me.lblWaktu)
+        Me.Controls.Add(Me.lblTanggal)
+=======
         Me.ClientSize = New System.Drawing.Size(317, 109)
         Me.Controls.Add(Me.lblWaktuSekarang)
+>>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
         Me.Controls.Add(Me.btnMatikan)
-        Me.Controls.Add(Me.lblSetWaktuAlarm)
         Me.Controls.Add(Me.Alarmku)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form3"
@@ -87,7 +119,11 @@ Partial Class Form3
     End Sub
 
     Friend WithEvents Alarmku As Label
-    Friend WithEvents lblSetWaktuAlarm As Label
     Friend WithEvents btnMatikan As Button
+<<<<<<< HEAD
+    Friend WithEvents lblTanggal As Label
+    Friend WithEvents lblWaktu As Label
+=======
     Friend WithEvents lblWaktuSekarang As Label
+>>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
 End Class
