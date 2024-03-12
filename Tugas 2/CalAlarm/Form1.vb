@@ -25,6 +25,8 @@ Public Class Form1
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim WIBCulture As New CultureInfo("id-ID")
         lblDateTime.Text = DateAndTime.Now.ToString("HH:mm:ss")
+
+        CheckAndRemoveExpiredPanels()
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -168,4 +170,38 @@ Public Class Form1
             MessageBox.Show("Tidak ada data panel yang dimuat.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
+
+    Public Sub CheckAndRemoveExpiredPanels()
+        Dim panelsToRemove As New List(Of Panel)
+
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is Panel Then
+                Dim panel As Panel = TryCast(ctrl, Panel)
+                Dim waktuLabel As Label = panel.Controls.OfType(Of Label).FirstOrDefault(Function(lbl) lbl.Name = "waktu")
+
+                If waktuLabel IsNot Nothing Then
+                    Dim waktuPanel As DateTime
+                    If DateTime.TryParseExact(waktuLabel.Text, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, waktuPanel) Then
+                        If waktuPanel <= DateTime.Now Then
+                            panelsToRemove.Add(panel)
+                        End If
+                    End If
+                End If
+            End If
+        Next
+
+        For Each panelToRemove As Panel In panelsToRemove
+            ' Hapus panel dari daftar MyPanelsData
+            Dim panelDataToRemove As PanelData = MyPanelsData.FirstOrDefault(Function(p) $"{p.Hour}:{p.Minutes}:{p.Second}" = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "waktu").Text)
+            If panelDataToRemove IsNot Nothing Then
+                MyPanelsData.Remove(panelDataToRemove)
+            End If
+
+            ' Hapus panel dari form
+            Me.Controls.Remove(panelToRemove)
+            panelToRemove.Dispose()
+        Next
+    End Sub
+
+
 End Class

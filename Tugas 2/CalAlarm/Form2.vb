@@ -87,21 +87,29 @@ Public Class Form2
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        If panelCount < 8 Then
-            Dim panelData As New PanelData()
-            panelData.Hour = txtBoxHour.Text
-            panelData.Minutes = txtBoxMinutes.Text
-            panelData.Second = txtBoxSecond.Text
-            panelData.Dates = SelectedDate.ToShortDateString()
-            PanelsData.Add(panelData)
+        Dim inputTime As TimeSpan = TimeSpan.Parse(txtBoxHour.Text & ":" & txtBoxMinutes.Text & ":" & txtBoxSecond.Text)
+        Dim currentTime As TimeSpan = DateTime.Now.TimeOfDay
 
-            CreatePanel()
-            Form1.DisplayLoadedData()
+        If inputTime > currentTime Then
+            If panelCount < 8 Then
+                Dim panelData As New PanelData()
+                With panelData
+                    .Hour = txtBoxHour.Text
+                    .Minutes = txtBoxMinutes.Text
+                    .Second = txtBoxSecond.Text
+                    .Dates = SelectedDate.ToShortDateString()
+                End With
+
+                PanelsData.Add(panelData)
+                CreatePanel()
+                Form1.DisplayLoadedData()
+            Else
+                MessageBox.Show("Mohon maaf, data alarm hanya bisa berisi maksimum 8 saja")
+            End If
+            Me.Close()
         Else
-            MessageBox.Show("Mohon maaf data alarm hanya berisi 8 saja")
+            MessageBox.Show("Waktu yang dimasukkan harus lebih besar dari waktu sekarang", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
-        Dim combinedTime As String = txtBoxHour.Text & ":" & txtBoxMinutes.Text & ":" & txtBoxSecond.Text
-        Me.Close()
     End Sub
 
     Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar1.DateChanged
@@ -137,6 +145,8 @@ Public Class Form2
 
         AddLabelsToPanel(pnl)
         panelCount += 1
+
+        FillEmptySpaces()
     End Sub
 
     Public Sub AddLabelsToPanel(ByVal pnl As Panel)
@@ -160,6 +170,62 @@ Public Class Form2
         End With
         pnl.Controls.Add(lblTanggal)
     End Sub
+
+    Public Sub FillEmptySpaces()
+        Dim panelWidth As Integer = 200
+        Dim panelHeight As Integer = 100
+        Dim panelSpacing As Integer = 10
+        Dim verticalSpacing As Integer = 10
+
+        Dim totalPanels As Integer = Me.Controls.OfType(Of Panel)().Count
+
+        Dim rowCount As Integer = 0
+        Dim columnCount As Integer = 0
+
+        For i As Integer = 0 To totalPanels - 1
+            Dim panel As Panel = Me.Controls.OfType(Of Panel)().FirstOrDefault(Function(p) p.Location = New Point(columnCount * (panelWidth + panelSpacing), rowCount * (panelHeight + verticalSpacing) + 60))
+
+            If panel Is Nothing Then
+                panel = New Panel()
+                With panel
+                    .BackColor = Color.Pink
+                    .BorderStyle = BorderStyle.FixedSingle
+                    .Size = New Size(panelWidth, panelHeight)
+                    .Location = New Point(columnCount * (panelWidth + panelSpacing), rowCount * (panelHeight + verticalSpacing) + 60)
+                End With
+
+                Dim lblWaktu As New Label
+                With lblWaktu
+                    .Name = "waktu"
+                    .Text = ""
+                    .Location = New Point(10, 20)
+                    .Font = New Font(lblWaktu.Font, FontStyle.Bold)
+                    .Font = New Font(lblWaktu.Font.FontFamily, 20)
+                    .AutoSize = True
+                End With
+
+                Dim lblTanggal As New Label
+                With lblTanggal
+                    .Name = "tanggal"
+                    .Text = ""
+                    .Location = New Point(10, 60)
+                    .AutoSize = True
+                End With
+
+                panel.Controls.Add(lblWaktu)
+                panel.Controls.Add(lblTanggal)
+
+                Me.Controls.Add(panel)
+            End If
+
+            columnCount += 1
+            If columnCount = 4 Then
+                columnCount = 0
+                rowCount += 1
+            End If
+        Next
+    End Sub
+
 End Class
 
 Public Class PanelData
