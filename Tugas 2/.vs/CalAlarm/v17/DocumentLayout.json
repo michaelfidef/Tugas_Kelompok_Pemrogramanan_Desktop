@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|c:\\kuliah\\pemrograman desktop\\tugas\\tugas kelompok 2\\tugas 2\\calalarm\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|solutionrelative:calalarm\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|c:\\kuliah\\pemrograman desktop\\tugas\\tugas kelompok 2\\tugas 2\\calalarm\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|solutionrelative:calalarm\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|c:\\kuliah\\pemrograman desktop\\tugas\\tugas kelompok 2\\tugas 2\\calalarm\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|solutionrelative:calalarm\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|c:\\kuliah\\pemrograman desktop\\tugas\\tugas kelompok 2\\tugas 2\\calalarm\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|solutionrelative:calalarm\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|c:\\kuliah\\pemrograman desktop\\tugas\\tugas kelompok 2\\tugas 2\\calalarm\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\calalarm\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|solutionrelative:calalarm\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\calalarm\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{3E2FC83D-E040-4923-8FD3-B33DC74F5B7C}|CalAlarm\\CalAlarm.vbproj|solutionrelative:calalarm\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,15 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form2.vb",
-              "DocumentMoniker": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\CalAlarm\\Form2.vb",
-              "RelativeDocumentMoniker": "CalAlarm\\Form2.vb",
-              "ToolTip": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\CalAlarm\\Form2.vb",
-              "RelativeToolTip": "CalAlarm\\Form2.vb",
-              "ViewState": "AQIAAG0AAAAAAAAAAAA8wH8AAAAAAAAA",
+              "Title": "Form3.vb",
+              "DocumentMoniker": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\CalAlarm\\Form3.vb",
+              "RelativeDocumentMoniker": "CalAlarm\\Form3.vb",
+              "ToolTip": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\CalAlarm\\Form3.vb",
+              "RelativeToolTip": "CalAlarm\\Form3.vb",
+              "ViewState": "AQIAABYAAAAAAAAAAAAowCkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-08T06:45:35.618Z",
+              "WhenOpened": "2024-03-12T02:57:51.523Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form3.vb [Design]",
+              "DocumentMoniker": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\CalAlarm\\Form3.vb",
+              "RelativeDocumentMoniker": "CalAlarm\\Form3.vb",
+              "ToolTip": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\CalAlarm\\Form3.vb [Design]",
+              "RelativeToolTip": "CalAlarm\\Form3.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-12T02:41:23.823Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -45,14 +61,14 @@
               "RelativeDocumentMoniker": "CalAlarm\\Form1.vb",
               "ToolTip": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\CalAlarm\\Form1.vb",
               "RelativeToolTip": "CalAlarm\\Form1.vb",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAAAHUAAAA1AAAA",
+              "ViewState": "AQIAAL8AAAAAAAAAAAAwwNkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-03-08T06:00:33.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Form1.vb [Design]",
               "DocumentMoniker": "C:\\Kuliah\\Pemrograman Desktop\\Tugas\\Tugas Kelompok 2\\Tugas 2\\CalAlarm\\Form1.vb",
               "RelativeDocumentMoniker": "CalAlarm\\Form1.vb",
