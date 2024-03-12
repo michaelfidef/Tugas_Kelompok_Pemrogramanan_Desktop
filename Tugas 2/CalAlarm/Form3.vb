@@ -27,16 +27,8 @@ Public Class Form3
 
         Me.Location = New Point(screenWidth - formWidth - offsetX, screenHeight - formHeight - offsetY)
 
-        ' Inisialisasi objek SoundPlayer dengan lokasi file audio
-        soundPlayer = New SoundPlayer("../alarm.wav") ' Ganti dengan path file audio yang sesuai
+        soundPlayer = New SoundPlayer("../alarm.wav")
 
-        ' Mainkan audio
         soundPlayer.PlayLooping()
-    End Sub
-
-    Private Sub Form3_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        If soundPlayer IsNot Nothing Then
-            soundPlayer.Stop()
-        End If
     End Sub
 End Class

@@ -178,24 +178,18 @@ Public Class Form1
             If TypeOf ctrl Is Panel Then
                 Dim panel As Panel = TryCast(ctrl, Panel)
                 Dim waktuLabel As Label = panel.Controls.OfType(Of Label).FirstOrDefault(Function(lbl) lbl.Name = "waktu")
-                Dim tanggalLabel As Label = panel.Controls.OfType(Of Label).FirstOrDefault(Function(lbl) lbl.Name = "tanggal")
 
-                If waktuLabel IsNot Nothing AndAlso tanggalLabel IsNot Nothing Then
+                If waktuLabel IsNot Nothing Then
                     Dim waktuPanel As DateTime
                     If DateTime.TryParseExact(waktuLabel.Text, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, waktuPanel) Then
-                        Dim tanggalPanel As DateTime
-                        If DateTime.TryParseExact(tanggalLabel.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, tanggalPanel) Then
-                            If waktuPanel <= DateTime.Now AndAlso tanggalPanel <= DateTime.Now.Date Then
-                                ' Tambahkan panel ke dalam list panelsToRemove
-                                panelsToRemove.Add(panel)
-                            End If
+                        If waktuPanel <= DateTime.Now Then
+                            panelsToRemove.Add(panel)
                         End If
                     End If
                 End If
             End If
         Next
 
-        ' Hapus panel-panel yang telah ditentukan dari daftar MyPanelsData dan dari form
         For Each panelToRemove As Panel In panelsToRemove
             Dim waktuPanelText As String = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "waktu")?.Text
             Dim tanggalPanelText As String = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "tanggal")?.Text
@@ -215,8 +209,4 @@ Public Class Form1
             panelToRemove.Dispose()
         Next
     End Sub
-
-
-
-
 End Class
