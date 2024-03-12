@@ -177,23 +177,41 @@ Public Class Form1
             If TypeOf ctrl Is Panel Then
                 Dim panel As Panel = TryCast(ctrl, Panel)
                 Dim waktuLabel As Label = panel.Controls.OfType(Of Label).FirstOrDefault(Function(lbl) lbl.Name = "waktu")
+                Dim tanggalLabel As Label = panel.Controls.OfType(Of Label).FirstOrDefault(Function(lbl) lbl.Name = "tanggal")
 
-                If waktuLabel IsNot Nothing Then
+                If waktuLabel IsNot Nothing AndAlso tanggalLabel IsNot Nothing Then
                     Dim waktuPanel As DateTime
                     If DateTime.TryParseExact(waktuLabel.Text, "HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, waktuPanel) Then
-                        If waktuPanel <= DateTime.Now Then
-                            panelsToRemove.Add(panel)
+                        Dim tanggalPanel As DateTime
+                        If DateTime.TryParseExact(tanggalLabel.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, tanggalPanel) Then
+                            If waktuPanel <= DateTime.Now AndAlso tanggalPanel <= DateTime.Now.Date Then
+                                ' Tambahkan panel ke dalam list panelsToRemove
+                                panelsToRemove.Add(panel)
+                            End If
                         End If
                     End If
                 End If
             End If
         Next
 
+        ' Hapus panel-panel yang telah ditentukan dari daftar MyPanelsData dan dari form
         For Each panelToRemove As Panel In panelsToRemove
+<<<<<<< HEAD
             Dim panelDataToRemove As PanelData = MyPanelsData.FirstOrDefault(Function(p) $"{p.Hour}:{p.Minutes}:{p.Second}" = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "waktu").Text)
             If panelDataToRemove IsNot Nothing Then
                 MyPanelsData.Remove(panelDataToRemove)
 
+=======
+            Dim waktuPanelText As String = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "waktu")?.Text
+            Dim tanggalPanelText As String = panelToRemove.Controls.OfType(Of Label)().FirstOrDefault(Function(lbl) lbl.Name = "tanggal")?.Text
+
+            ' Hapus panel dari daftar MyPanelsData
+            Dim panelDataToRemove As PanelData = MyPanelsData.FirstOrDefault(Function(p) $"{p.Hour}:{p.Minutes}:{p.Second}" = waktuPanelText AndAlso p.Dates = tanggalPanelText)
+            If panelDataToRemove IsNot Nothing Then
+                MyPanelsData.Remove(panelDataToRemove)
+
+                ' Kirim data ke Form3
+>>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
                 Dim form3 As New Form3(panelDataToRemove)
                 form3.Show()
             End If
@@ -202,4 +220,11 @@ Public Class Form1
             panelToRemove.Dispose()
         Next
     End Sub
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 47218c8aa92fae1a18f9e4cdf1bba43548975c90
 End Class
