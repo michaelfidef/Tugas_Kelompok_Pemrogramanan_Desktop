@@ -1,0 +1,32 @@
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan Citra.vbproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmUtama.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmHistogram.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan_Citra.Resources.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan Citra.vbproj.GenerateResource.cache
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan Citra.vbproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\bin\Debug\Pengolahan Citra.exe.config
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\bin\Debug\Pengolahan Citra.exe
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\bin\Debug\Pengolahan Citra.pdb
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\bin\Debug\Pengolahan Citra.xml
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan Citra.exe
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan Citra.xml
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan Citra.pdb
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmHistogramBalok.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmWatermark.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\source\repos\Pengolahan Citra\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmBorder.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\bin\Debug\Pengolahan Citra.exe.config
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\bin\Debug\Pengolahan Citra.exe
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\bin\Debug\Pengolahan Citra.pdb
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\bin\Debug\Pengolahan Citra.xml
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan Citra.vbproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmUtama.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmBorder.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmHistogram.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmHistogramBalok.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan_Citra.frmWatermark.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan_Citra.Resources.resources
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan Citra.vbproj.GenerateResource.cache
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan Citra.vbproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan Citra.exe
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan Citra.xml
+C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 3\Pengolahan Citra\obj\Debug\Pengolahan Citra.pdb
