@@ -298,4 +298,71 @@
         End If
     End Sub
 
+    Private Sub RonaMerahToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RonaMerahToolStripMenuItem.Click
+        If PictureBox1.Image IsNot Nothing Then
+            Dim bmp As New Bitmap(PictureBox1.Image)
+            For bar As Integer = 0 To PictureBox1.Image.Height - 1
+                For kol As Integer = 0 To PictureBox1.Image.Width - 1
+                    Dim r As Integer = bmp.GetPixel(kol, bar).R
+                    Dim g As Integer = bmp.GetPixel(kol, bar).G
+                    Dim b As Integer = bmp.GetPixel(kol, bar).B
+                    bmp.SetPixel(kol, bar, Color.FromArgb(r, 0, 0))
+                Next
+            Next
+            PictureBox1.Image = bmp
+        Else
+            MessageBox.Show("No image opened in the PictureBox.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub RonaHijauToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RonaHijauToolStripMenuItem.Click
+        If PictureBox1.Image IsNot Nothing Then
+            Dim bmp As New Bitmap(PictureBox1.Image)
+            For bar As Integer = 0 To PictureBox1.Image.Height - 1
+                For kol As Integer = 0 To PictureBox1.Image.Width - 1
+                    Dim r As Integer = bmp.GetPixel(kol, bar).R
+                    Dim g As Integer = bmp.GetPixel(kol, bar).G
+                    Dim b As Integer = bmp.GetPixel(kol, bar).B
+                    bmp.SetPixel(kol, bar, Color.FromArgb(0, g, 0))
+                Next
+            Next
+            PictureBox1.Image = bmp
+        Else
+            MessageBox.Show("No image opened in the PictureBox.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub RonaBiruToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RonaBiruToolStripMenuItem.Click
+        If PictureBox1.Image IsNot Nothing Then
+            Dim bmp As New Bitmap(PictureBox1.Image)
+            For bar As Integer = 0 To PictureBox1.Image.Height - 1
+                For kol As Integer = 0 To PictureBox1.Image.Width - 1
+                    Dim r As Integer = bmp.GetPixel(kol, bar).R
+                    Dim g As Integer = bmp.GetPixel(kol, bar).G
+                    Dim b As Integer = bmp.GetPixel(kol, bar).B
+                    bmp.SetPixel(kol, bar, Color.FromArgb(0, 0, b))
+                Next
+            Next
+            PictureBox1.Image = bmp
+        Else
+            MessageBox.Show("No image opened in the PictureBox.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub RonaSpesialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RonaSpesialToolStripMenuItem.Click
+        If PictureBox1.Image IsNot Nothing Then
+            Dim bmp As New Bitmap(PictureBox1.Image)
+            For bar As Integer = 0 To PictureBox1.Image.Height - 1
+                For kol As Integer = 0 To PictureBox1.Image.Width - 1
+                    Dim r As Integer = bmp.GetPixel(kol, bar).R
+                    Dim g As Integer = bmp.GetPixel(kol, bar).G
+                    Dim b As Integer = bmp.GetPixel(kol, bar).B
+                    bmp.SetPixel(kol, bar, Color.FromArgb(b, r, g))
+                Next
+            Next
+            PictureBox1.Image = bmp
+        Else
+            MessageBox.Show("No image opened in the PictureBox.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
 End Class

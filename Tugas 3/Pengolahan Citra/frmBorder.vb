@@ -2,8 +2,6 @@
 
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
-        Dim warna As Color
-        Dim ketebalan As Integer
         Dim pen As New Pen(GetColorFromName(cbWarna.SelectedItem.ToString()), Convert.ToInt32(cbKetebalan.SelectedItem.ToString().Replace("px", "")))
         Dim g As Graphics = frmUtama.PictureBox1.CreateGraphics()
 
