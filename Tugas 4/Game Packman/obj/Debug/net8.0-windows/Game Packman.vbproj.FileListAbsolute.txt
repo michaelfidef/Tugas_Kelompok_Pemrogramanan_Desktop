@@ -48,3 +48,21 @@ C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester
 C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\pt 12\PackMan\Game Packman\obj\Debug\net8.0-windows\Game Packman.pdb
 C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\pt 12\PackMan\Game Packman\obj\Debug\net8.0-windows\Game Packman.genruntimeconfig.cache
 C:\Users\ASUS\OneDrive - Duta Wacana Christian University\Documents\6th semester\Pemrograman Desktop\pt 12\PackMan\Game Packman\obj\Debug\net8.0-windows\ref\Game Packman.dll
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\bin\Debug\net8.0-windows\Game Packman.exe
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\bin\Debug\net8.0-windows\Game Packman.deps.json
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\bin\Debug\net8.0-windows\Game Packman.runtimeconfig.json
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\bin\Debug\net8.0-windows\Game Packman.dll
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\bin\Debug\net8.0-windows\Game Packman.pdb
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game_Packman.Form1.resources
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game_Packman.Resources.resources
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.vbproj.GenerateResource.cache
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.GeneratedMSBuildEditorConfig.editorconfig
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.AssemblyInfoInputs.cache
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.AssemblyInfo.vb
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.vbproj.CoreCompileInputs.cache
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.sourcelink.json
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.dll
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\refint\Game Packman.dll
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.pdb
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\Game Packman.genruntimeconfig.cache
+C:\Kuliah\Pemrograman Desktop\Tugas\Tugas Kelompok 4\Tugas_Kelompok_Pemrogramanan_Desktop\Tugas 4\Game Packman\obj\Debug\net8.0-windows\ref\Game Packman.dll

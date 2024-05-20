@@ -15,7 +15,7 @@ Public Class Form1
                {0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0},
                {0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
                {0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-               {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+               {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}}
     'kumpulan variabel
     Dim tsz = 40 'tile size (ukuran grid/tilenya)
@@ -43,6 +43,9 @@ Public Class Form1
     Dim enm3 As Image = My.Resources.hantu2
     Dim goal As Image = My.Resources.omah
     Dim lifeSprite As Image = My.Resources.heart
+    Dim wandering1 As Boolean = False
+    Dim wandering2 As Boolean = False
+    Dim wandering3 As Boolean = False
 
     Private Sub Redraw()
         Dim g As Graphics = Graphics.FromImage(PictureBox1.Image)
@@ -103,6 +106,7 @@ Public Class Form1
         End If
     End Sub
 
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox1.Width = (map.GetUpperBound(1) + 1) * tsz
         PictureBox1.Height = (map.GetUpperBound(0) + 1) * tsz
@@ -114,34 +118,74 @@ Public Class Form1
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If chasing Then
-            Dim distances As New List(Of Tuple(Of Integer, Integer, Integer))
-            distances.Add(New Tuple(Of Integer, Integer, Integer)(enmx, enmy, Math.Abs(pacx - enmx) + Math.Abs(pacy - enmy)))
-            distances.Add(New Tuple(Of Integer, Integer, Integer)(enmx2, enmy2, Math.Abs(pacx - enmx2) + Math.Abs(pacy - enmy2)))
-            distances.Add(New Tuple(Of Integer, Integer, Integer)(enmx3, enmy3, Math.Abs(pacx - enmx3) + Math.Abs(pacy - enmy3)))
-            distances = distances.OrderBy(Function(d) d.Item3).ToList()
+        Dim detectionRange As Integer = 5 ' Range within which ghosts will chase Pacman
 
-            ' Move the two closest enemies towards Pacman
-            MoveEnemyTowardsPacman(distances(0).Item1, distances(0).Item2, pacx, pacy)
-            MoveEnemyTowardsPacman(distances(1).Item1, distances(1).Item2, pacx, pacy)
+        ' Move all enemies towards Pacman if within range and not in wandering mode, otherwise move randomly
+        If wandering1 OrElse Not IsWithinDetectionRange(enmx, enmy, pacx, pacy, detectionRange) Then
+            Dim newPos = MoveEnemyRandomly(enmx, enmy)
+            enmx = newPos.Item1
+            enmy = newPos.Item2
         Else
-            ' Move all enemies randomly
-            MoveEnemyRandomly(enmx, enmy)
-            MoveEnemyRandomly(enmx2, enmy2)
-            MoveEnemyRandomly(enmx3, enmy3)
+            Dim newPos = MoveEnemyTowardsPacman(enmx, enmy, pacx, pacy)
+            enmx = newPos.Item1
+            enmy = newPos.Item2
         End If
 
-        ' Periksa dan pindahkan hantu yang terjebak
-        CheckAndMoveStuckEnemy(enmx, enmy, pacx, pacy)
-        CheckAndMoveStuckEnemy(enmx2, enmy2, pacx, pacy)
-        CheckAndMoveStuckEnemy(enmx3, enmy3, pacx, pacy)
+        If wandering2 OrElse Not IsWithinDetectionRange(enmx2, enmy2, pacx, pacy, detectionRange) Then
+            Dim newPos = MoveEnemyRandomly(enmx2, enmy2)
+            enmx2 = newPos.Item1
+            enmy2 = newPos.Item2
+        Else
+            Dim newPos = MoveEnemyTowardsPacman(enmx2, enmy2, pacx, pacy)
+            enmx2 = newPos.Item1
+            enmy2 = newPos.Item2
+        End If
+
+        If wandering3 OrElse Not IsWithinDetectionRange(enmx3, enmy3, pacx, pacy, detectionRange) Then
+            Dim newPos = MoveEnemyRandomly(enmx3, enmy3)
+            enmx3 = newPos.Item1
+            enmy3 = newPos.Item2
+        Else
+            Dim newPos = MoveEnemyTowardsPacman(enmx3, enmy3, pacx, pacy)
+            enmx3 = newPos.Item1
+            enmy3 = newPos.Item2
+        End If
 
         ' Check if Pakman is caught by any enemy
         cekEnemies()
         Redraw()
     End Sub
 
-    Private Sub MoveEnemyTowardsPacman(ByRef enmx As Integer, ByRef enmy As Integer, targetX As Integer, targetY As Integer)
+
+    Private Function MoveEnemyTowardsPacman(enmx As Integer, enmy As Integer, targetX As Integer, targetY As Integer) As Tuple(Of Integer, Integer)
+        Dim moved As Boolean = False
+        Dim options As New List(Of Tuple(Of Integer, Integer, Integer))
+
+        If targetX > enmx AndAlso enmx + 1 <= map.GetUpperBound(1) AndAlso map(enmy, enmx + 1) = 1 AndAlso Not IsCulDeSac(enmx + 1, enmy) Then
+            options.Add(New Tuple(Of Integer, Integer, Integer)(enmx + 1, enmy, Math.Abs(targetX - (enmx + 1)) + Math.Abs(targetY - enmy)))
+        ElseIf targetX < enmx AndAlso enmx - 1 >= 0 AndAlso map(enmy, enmx - 1) = 1 AndAlso Not IsCulDeSac(enmx - 1, enmy) Then
+            options.Add(New Tuple(Of Integer, Integer, Integer)(enmx - 1, enmy, Math.Abs(targetX - (enmx - 1)) + Math.Abs(targetY - enmy)))
+        End If
+
+        If targetY > enmy AndAlso enmy + 1 <= map.GetUpperBound(0) AndAlso map(enmy + 1, enmx) = 1 AndAlso Not IsCulDeSac(enmx, enmy + 1) Then
+            options.Add(New Tuple(Of Integer, Integer, Integer)(enmx, enmy + 1, Math.Abs(targetX - enmx) + Math.Abs(targetY - (enmy + 1))))
+        ElseIf targetY < enmy AndAlso enmy - 1 >= 0 AndAlso map(enmy - 1, enmx) = 1 AndAlso Not IsCulDeSac(enmx, enmy - 1) Then
+            options.Add(New Tuple(Of Integer, Integer, Integer)(enmx, enmy - 1, Math.Abs(targetX - enmx) + Math.Abs(targetY - (enmy - 1))))
+        End If
+
+        If options.Count > 0 Then
+            Dim bestOption = options.OrderBy(Function(o) o.Item3).First()
+            enmx = bestOption.Item1
+            enmy = bestOption.Item2
+            moved = True
+        End If
+
+        ' Return the new position
+        Return New Tuple(Of Integer, Integer)(enmx, enmy)
+    End Function
+
+
+    Private Function MoveEnemyRandomly(enmx As Integer, enmy As Integer) As Tuple(Of Integer, Integer)
         Dim directions As New List(Of Integer) From {0, 1, 2, 3}
         Dim moved As Boolean = False
 
@@ -151,61 +195,32 @@ Public Class Form1
 
             Select Case direction
                 Case 0 ' Up
-                    If enmy > 0 AndAlso map(enmy - 1, enmx) = 1 Then
+                    If enmy > 0 AndAlso map(enmy - 1, enmx) = 1 AndAlso Not IsCulDeSac(enmx, enmy - 1) Then
                         enmy -= 1
                         moved = True
                     End If
                 Case 1 ' Right
-                    If enmx < map.GetUpperBound(1) AndAlso map(enmy, enmx + 1) = 1 Then
+                    If enmx < map.GetUpperBound(1) AndAlso map(enmy, enmx + 1) = 1 AndAlso Not IsCulDeSac(enmx + 1, enmy) Then
                         enmx += 1
                         moved = True
                     End If
                 Case 2 ' Down
-                    If enmy < map.GetUpperBound(0) AndAlso map(enmy + 1, enmx) = 1 Then
+                    If enmy < map.GetUpperBound(0) AndAlso map(enmy + 1, enmx) = 1 AndAlso Not IsCulDeSac(enmx, enmy + 1) Then
                         enmy += 1
                         moved = True
                     End If
                 Case 3 ' Left
-                    If enmx > 0 AndAlso map(enmy, enmx - 1) = 1 Then
+                    If enmx > 0 AndAlso map(enmy, enmx - 1) = 1 AndAlso Not IsCulDeSac(enmx - 1, enmy) Then
                         enmx -= 1
                         moved = True
                     End If
             End Select
         End While
-    End Sub
 
-    Private Sub MoveEnemyRandomly(ByRef enmx As Integer, ByRef enmy As Integer)
-        Dim directions As New List(Of Integer) From {0, 1, 2, 3}
-        Dim moved As Boolean = False
+        ' Return the new position
+        Return New Tuple(Of Integer, Integer)(enmx, enmy)
+    End Function
 
-        While directions.Count > 0 AndAlso Not moved
-            Dim direction As Integer = directions(CInt(Math.Floor(Rnd() * directions.Count)))
-            directions.Remove(direction)
-
-            Select Case direction
-                Case 0 ' Up
-                    If enmy > 0 AndAlso map(enmy - 1, enmx) = 1 Then
-                        enmy -= 1
-                        moved = True
-                    End If
-                Case 1 ' Right
-                    If enmx < map.GetUpperBound(1) AndAlso map(enmy, enmx + 1) = 1 Then
-                        enmx += 1
-                        moved = True
-                    End If
-                Case 2 ' Down
-                    If enmy < map.GetUpperBound(0) AndAlso map(enmy + 1, enmx) = 1 Then
-                        enmy += 1
-                        moved = True
-                    End If
-                Case 3 ' Left
-                    If enmx > 0 AndAlso map(enmy, enmx - 1) = 1 Then
-                        enmx -= 1
-                        moved = True
-                    End If
-            End Select
-        End While
-    End Sub
 
     Private Sub CheckAndMoveStuckEnemy(ByRef enmx As Integer, ByRef enmy As Integer, pacx As Integer, pacy As Integer)
         Dim directions As New List(Of Integer) From {0, 1, 2, 3}
@@ -295,6 +310,7 @@ Public Class Form1
         End If
     End Sub
 
+
     Private Sub cekNyawa()
         lives -= 1
         If lives >= 0 Then
@@ -307,6 +323,8 @@ Public Class Form1
             MsgBox("Game Over!")
             ResetGame()
         Else
+            pacx = 1 ' Reset Pacman's position
+            pacy = 1
             Redraw()
         End If
     End Sub
@@ -325,13 +343,10 @@ Public Class Form1
         Redraw()
     End Sub
 
-    Private Sub CheckCulDeSac()
-        If IsCulDeSac(pacx, pacy) Then
-            chasing = False
-        Else
-            chasing = True
-        End If
-    End Sub
+
+    Private Function IsWithinDetectionRange(enmx As Integer, enmy As Integer, pacx As Integer, pacy As Integer, range As Integer) As Boolean
+        Return Math.Abs(enmx - pacx) + Math.Abs(enmy - pacy) <= range
+    End Function
 
     Private Function IsCulDeSac(x As Integer, y As Integer) As Boolean
         Dim walls As Integer = 0
@@ -341,4 +356,25 @@ Public Class Form1
         If y < map.GetUpperBound(0) AndAlso map(y + 1, x) = 0 Then walls += 1
         Return walls >= 3
     End Function
+
+    Private Sub CheckCulDeSac()
+        If IsCulDeSac(pacx, pacy) OrElse IsAtEdge(pacx, pacy) Then
+            chasing = False
+            wandering1 = True
+            wandering2 = True
+            wandering3 = True
+        Else
+            chasing = True
+            wandering1 = False
+            wandering2 = False
+            wandering3 = False
+        End If
+    End Sub
+
+
+    Private Function IsAtEdge(pacx As Integer, pacy As Integer) As Boolean
+        Return pacx = 0 Or pacx = map.GetUpperBound(1) Or pacy = 0 Or pacy = map.GetUpperBound(0)
+    End Function
+
+
 End Class

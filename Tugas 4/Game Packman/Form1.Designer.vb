@@ -36,19 +36,17 @@ Partial Class Form1
         ' 
         PictureBox1.Dock = DockStyle.Fill
         PictureBox1.Location = New Point(0, 0)
-        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(865, 618)
+        PictureBox1.Size = New Size(834, 681)
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(865, 618)
+        ClientSize = New Size(834, 681)
         Controls.Add(PictureBox1)
-        Margin = New Padding(3, 4, 3, 4)
         Name = "Form1"
         Text = "Form1"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
